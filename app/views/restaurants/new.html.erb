@@ -1,2 +1,14 @@
-<h1>Restaurants#new</h1>
-<p>Find me in app/views/restaurants/new.html.erb</p>
+<h1 class="text-center">create new restaurant</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4">
+
+      <%= simple_form_for @restaurant do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :category, collection: Restaurant::CATEGORIES, prompt: "choose a category" %>
+        <%= f.submit "add a restaurant", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
